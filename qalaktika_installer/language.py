@@ -26,4 +26,4 @@ def importlang ():
     return COUNTRY, LANGUAGE, TZ
 
 COUNTRY, LANGUAGE, TZ = importlang()
-LANG = loads(open(f"./owen_installer/language/{LANGUAGE}.owenjson", "r").read())["STRINGS"]
+LANG = loads(open(f"./qalaktika_installer/language/{LANGUAGE}.qalaktikajson", "r").read())["STRINGS"]
