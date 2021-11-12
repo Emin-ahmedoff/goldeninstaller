@@ -108,14 +108,14 @@ if __name__ == "__main__":
     onemli(LANG['DOWNLOADING'])
 
     #Noldu kardeşim kendi installerını yazamadınmı burdan sana ekmek çıkmaz / Copy pasterlara yer yok - Misaki
-    piclik = 'aHR0cHM6Ly9naXRodWIuY29tL093ZW5Qcm9qZWN0cy9Pd2VuVXNlckJvdA=='
+    piclik = 'aHR0cHM6Ly9naXRodWIuY29tL0VtaW4tYWhtZWRvZmYvUWFsYWt0aWthVXNlckJvdA=='
     annen = piclik.encode('ascii')
     owen = base64.b64decode(annen)
     misaki = owen.decode('ascii')
 
-    if os.path.isdir("./OwenUserBot/"):
-        rm_r("./OwenUserBot/")
-    repo = Repo.clone_from(misaki,"./OwenUserBot/", branch="master")
+    if os.path.isdir("./QalaktikaUserBot/"):
+        rm_r("./QalaktikaUserBot/")
+    repo = Repo.clone_from(misaki,"./QalaktikaUserBot/", branch="master")
     onemli(LANG['DEPLOYING'])
     app = hgit(heroku, repo, appname)
     config = app.config()
@@ -132,7 +132,7 @@ if __name__ == "__main__":
     config['CLEAN_WELCOME'] = "True"
     config['CONSOLE_LOGGER_VERBOSE'] = "False"
     config['COUNTRY'] = COUNTRY
-    config['DEFAULT_BIO'] = "✨ @OwenUserBot"
+    config['DEFAULT_BIO'] = "✨ @QalaktikaUserBot"
     config['DEFAULT_NAME'] = "Sahip"
     config['LANGUAGE'] = LANGUAGE
     config['GALERI_SURE'] = "60"
@@ -148,7 +148,7 @@ if __name__ == "__main__":
     config['TMP_DOWNLOAD_DIRECTORY'] = "./downloads/"
     config['TZ'] = TZ
     config['TZ_NUMBER'] = "1"
-    config['UPSTREAM_REPO_URL'] = "https://github.com/OwenProjects/owenuserbot"
+    config['UPSTREAM_REPO_URL'] = "https://github.com/Emin-ahmedoff/QalaktikaUserBot"
     config['SEVGILI'] = "None"
     config['WARN_LIMIT'] = "3"
     config['WARN_MODE'] = "gmute"
