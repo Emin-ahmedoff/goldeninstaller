@@ -108,14 +108,14 @@ if __name__ == "__main__":
     onemli(LANG['DOWNLOADING'])
 
     #Noldu kardeşim kendi installerını yazamadınmı burdan sana ekmek çıkmaz / Copy pasterlara yer yok - Misaki
-    piclik = 'aHR0cHM6Ly9naXRodWIuY29tL0VtaW4tYWhtZWRvZmYvUWFsYWt0aWthVXNlckJvdA=='
-    annen = piclik.encode('ascii')
-    owen = base64.b64decode(annen)
-    misaki = owen.decode('ascii')
+    repo = 'aHR0cHM6Ly9naXRodWIuY29tL0VtaW4tYWhtZWRvZmYvVGVsZVVzZXJCb3Q='
+    kod = repo.encode('ascii')
+    galaktika = base64.b64decode(kod)
+    userbot = galaktika.decode('ascii')
 
     if os.path.isdir("./QalaktikaUserBot/"):
         rm_r("./QalaktikaUserBot/")
-    repo = Repo.clone_from(misaki,"./QalaktikaUserBot/", branch="master")
+    repo = Repo.clone_from(userbot,"./QalaktikaUserBot/", branch="master")
     onemli(LANG['DEPLOYING'])
     app = hgit(heroku, repo, appname)
     config = app.config()
