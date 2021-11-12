@@ -61,7 +61,7 @@ async def oturumacvebotlogolustur (stri, aid, ahash):
     try:
         Client = TelegramClient(StringSession(stri), aid, ahash)
         await Client.start()
-        ms = await Client.send_message('me',LANG['OWENUSERBOT'])
+        ms = await Client.send_message('me',LANG['QALAKTİKAUSERBOT'])
         KanalId = await Client(CreateChannelRequest(
             title='OwenUserBot BotLog',
             about=LANG['AUTO_BOTLOG'],
