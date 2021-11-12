@@ -4,7 +4,7 @@ from telethon import TelegramClient, functions
 from telethon.sessions import StringSession
 from rich.prompt import Prompt, Confirm
 from asyncio import get_event_loop
-from owen_installer import *
+from qalaktika_installer import *
 from .astring import main
 from time import time
 from . import console
