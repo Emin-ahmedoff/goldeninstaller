@@ -48,7 +48,7 @@ def hgit (connect, repo, appname):
     else:
         remote = repo.create_remote("heroku", giturl)
     try:
-        remote.push(refspec="HEAD:refs/heads/master", force=True)
+        remote.push(refspec="HEAD:refs/heads/main", force=True)
     except Exception as e:
         hata(LANG['ERROR'] + str(e))
 
