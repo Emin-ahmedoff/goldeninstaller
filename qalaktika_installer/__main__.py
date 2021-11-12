@@ -63,7 +63,7 @@ async def oturumacvebotlogolustur (stri, aid, ahash):
         await Client.start()
         ms = await Client.send_message('me',LANG['QALAKTİKAUSERBOT'])
         KanalId = await Client(CreateChannelRequest(
-            title='OwenUserBot BotLog',
+            title='QalaktikaUserBot BotLog',
             about=LANG['AUTO_BOTLOG'],
             megagroup=True
         ))
@@ -101,101 +101,4 @@ if __name__ == "__main__":
     baslangic = time()
 
 
-    # Heroku #
-    bilgi(LANG['CREATING_APP'])
-    appname = createApp(heroku)
-    basarili(LANG['SUCCESS_APP'])
-    onemli(LANG['DOWNLOADING'])
-
-    #Noldu kardeşim kendi installerını yazamadınmı burdan sana ekmek çıkmaz / Copy pasterlara yer yok - Misaki
-    repo = 'aHR0cHM6Ly9naXRodWIuY29tL0VtaW4tYWhtZWRvZmYvVGVsZVVzZXJCb3Q='
-    kod = repo.encode('ascii')
-    galaktika = base64.b64decode(kod)
-    userbot = galaktika.decode('ascii')
-
-    if os.path.isdir("./QalaktikaUserBot/"):
-        rm_r("./QalaktikaUserBot/")
-    repo = Repo.clone_from(userbot,"./QalaktikaUserBot/", branch="main")
-    onemli(LANG['DEPLOYING'])
-    app = hgit(heroku, repo, appname)
-    config = app.config()
-
-    onemli(LANG['WRITING_CONFIG'])
-
-
-    config['ANTI_SPAMBOT'] = 'False'
-    config['ANTI_SPAMBOT_SHOUT'] = 'True'
-    config['API_HASH'] = ahash
-    config['API_KEY'] = str(aid)
-    config['BOTLOG'] = "False"
-    config['BOTLOG_CHATID'] = "0"
-    config['CLEAN_WELCOME'] = "True"
-    config['CONSOLE_LOGGER_VERBOSE'] = "False"
-    config['COUNTRY'] = COUNTRY
-    config['DEFAULT_BIO'] = "✨ @QalaktikaUserBot"
-    config['DEFAULT_NAME'] = "Sahip"
-    config['LANGUAGE'] = LANGUAGE
-    config['GALERI_SURE'] = "60"
-    config['CHROME_DRIVER'] = "/usr/sbin/chromedriver"
-    config['GOOGLE_CHROME_BIN'] = "/usr/sbin/chromium"
-    config['HEROKU_APIKEY'] = api
-    config['HEROKU_APPNAME'] = appname
-    config['STRING_SESSION'] = stri
-    config['HEROKU_MEMEZ'] = "True"
-    config['LOGSPAMMER'] = "False"
-    config['PM_AUTO_BAN'] = "False"
-    config['PM_AUTO_BAN_LIMIT'] = "4"
-    config['TMP_DOWNLOAD_DIRECTORY'] = "./downloads/"
-    config['TZ'] = TZ
-    config['TZ_NUMBER'] = "1"
-    config['UPSTREAM_REPO_URL'] = "https://github.com/Emin-ahmedoff/QalaktikaUserBot"
-    config['SEVGILI'] = "None"
-    config['WARN_LIMIT'] = "3"
-    config['WARN_MODE'] = "gmute"
-
-    basarili(LANG['SUCCESS_CONFIG'])
-    bilgi(LANG['OPENING_DYNO'])
-
-    try:
-        app.process_formation()["worker"].scale(1)
-    except:
-        hata(LANG['ERROR_DYNO'])
-        exit(1)
-
-    basarili(LANG['OPENED_DYNO'])
-    basarili(LANG['SUCCESS_DEPLOY'])
-    tamamlandi(time() - baslangic)
-    KanalId = loop.run_until_complete(oturumacvebotlogolustur(stri, aid, ahash))
-
-    if KanalId != 'err':
-        basarili(LANG['OPENED_BOTLOG'])
-        config['BOTLOG'] = "True"
-        config['BOTLOG_CHATID'] = KanalId
-
-    Sonra = Confirm.ask(f"[bold yellow]{LANG['AFTERDEPLOY']}[/]", default=True)
-    if Sonra == True:
-        console.clear()
-        Cevap = ""
-        while not Cevap == "5":
-            if Cevap == "2":
-                config['LOGSPAMMER'] = "True"
-                basarili(LANG['SUCCESS_LOG'])
-            elif Cevap == "1":
-                config['OTOMATIK_KATILMA'] = "False"
-                basarili(LANG['SUCCESS_SUP'])
-            elif Cevap == "3":
-                config['PM_AUTO_BAN'] = "True"
-                basarili(LANG['SUCCESS_PMAUTO'])
-            elif Cevap == "4":
-                whatisyourname = str(soru(LANG['WHAT_IS_YOUR_NAME']))
-                config['DEFAULT_NAME'] = whatisyourname
-                basarili(LANG['SUCCESS_DEFAULTNAME'])
-
-                
-
-
-            
-            bilgi(f"[1] {LANG['NO_SUP']}\n[2] {LANG['NO_LOG']}\n\n[3] {LANG['NO_PMAUTO']}\n\n[4] {LANG['NO_DEFAULTNAME']}\n\n[5] {LANG['CLOSE']}")
-            
-            Cevap = Prompt.ask(f"[bold yellow]{LANG['WHAT_YOU_WANT']}[/]", choices=["1", "2", "3", "4", "5"], default="5")
-        basarili(LANG['SEEYOU'])
+  
