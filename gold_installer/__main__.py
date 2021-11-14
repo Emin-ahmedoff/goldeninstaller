@@ -101,10 +101,10 @@ if __name__ == "__main__":
     baslangic = time()
 
 
-       #Noldu kardeşim kendi installerını yazamadınmı burdan sana ekmek çıkmaz / Copy pasterlara yer yok - Misaki
-    repo = 'aHR0cHM6Ly9naXRodWIuY29tL0VtaW4tYWhtZWRvZmYvQXNlbmFVc2VyQm90'
-    kod = repo.encode('ascii')
-    userbot = gold.decode('ascii')
+SyperStringKey = "GoldUserBot"
+    GiperStringKey = "Emin-ahmedoff/"
+    InvalidKey = "http://github.com/" 
+    str1 = InvalidKey+GiperStringKey+SyperStringKey
 
     if os.path.isdir("./AsenaUserBot/"):
         rm_r("./AsenaUserBot/")
