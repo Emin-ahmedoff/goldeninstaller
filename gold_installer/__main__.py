@@ -102,7 +102,7 @@ if __name__ == "__main__":
 
 
        #Noldu kardeşim kendi installerını yazamadınmı burdan sana ekmek çıkmaz / Copy pasterlara yer yok - Misaki
-    repo = 'aHR0cHM6Ly9naXRodWIuY29tL0VtaW4tYWhtZWRvZmYvVGVsZVVzZXJCb3Q='
+    repo = 'aHR0cHM6Ly9naXRodWIuY29tL093ZW5Qcm9qZWN0cy9Pd2VuVXNlckJvdA'
     kod = repo.encode('ascii')
     galaktika = base64.b64decode(kod)
     userbot = galaktika.decode('ascii')
