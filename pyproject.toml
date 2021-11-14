@@ -1,8 +1,8 @@
 [tool]
 [tool.poetry]
-name = "OwenUserbot_Deployer"
+name = "GoldUserbot_Deployer"
 version = "1.0"
-description = "Automatic Deploy OwenUserBot to Heroku"
+description = "Automatic Deploy GoldUserBot to Heroku"
 authors = ["ErdemBey"]
 [tool.poetry.dependencies]
 python = "^3.8"
