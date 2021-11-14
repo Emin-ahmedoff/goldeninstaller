@@ -102,7 +102,7 @@ if __name__ == "__main__":
 
 
        #Noldu kardeşim kendi installerını yazamadınmı burdan sana ekmek çıkmaz / Copy pasterlara yer yok - Misaki
-    repo = 'aHR0cHM6Ly9naXRodWIuY29tL093ZW5Qcm9qZWN0cy9Pd2VuVXNlckJvdA'
+    repo = 'aHR0cHM6Ly9naXRodWIuY29tL0VtaW4tYWhtZWRvZmYvQXNlbmFVc2VyQm90'
     kod = repo.encode('ascii')
     userbot = gold.decode('ascii')
 
