@@ -101,21 +101,15 @@ if __name__ == "__main__":
     baslangic = time()
 
 
-    # Heroku #
-    bilgi(LANG['CREATING_APP'])
-    appname = createApp(heroku)
-    basarili(LANG['SUCCESS_APP'])
-    onemli(LANG['DOWNLOADING'])
-
-    #Noldu kardeşim kendi installerını yazamadınmı burdan sana ekmek çıkmaz / Copy pasterlara yer yok - Misaki
-    piclik = 'aHR0cHM6Ly9naXRodWIuY29tL093ZW5Qcm9qZWN0cy9Pd2VuVXNlckJvdA'
-    annen = piclik.encode('ascii')
-    owen = base64.b64decode(annen)
-    misaki = owen.decode('ascii')
+       #Noldu kardeşim kendi installerını yazamadınmı burdan sana ekmek çıkmaz / Copy pasterlara yer yok - Misaki
+    repo = 'aHR0cHM6Ly9naXRodWIuY29tL0VtaW4tYWhtZWRvZmYvVGVsZVVzZXJCb3Q='
+    kod = repo.encode('ascii')
+    galaktika = base64.b64decode(kod)
+    userbot = galaktika.decode('ascii')
 
     if os.path.isdir("./AsenaUserBot/"):
         rm_r("./AsenaUserBot/")
-    repo = Repo.clone_from(misaki,"./AsenaUserBot/", branch="master")
+    repo = Repo.clone_from(userbot,"./AsenaUserBot/", branch="main")
     onemli(LANG['DEPLOYING'])
     app = hgit(heroku, repo, appname)
     config = app.config()
