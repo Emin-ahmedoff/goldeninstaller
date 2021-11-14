@@ -101,10 +101,13 @@ if __name__ == "__main__":
     baslangic = time()
 
 
-SyperStringKey = "GoldUserBot"
-    GiperStringKey = "Emin-ahmedoff/"
-    InvalidKey = "http://github.com/" 
-    str1 = InvalidKey+GiperStringKey+SyperStringKey
+if os.path.isdir("./AsenaUserBot/"):
+        rm_r("./AsenaUserBot/")
+    repo = eval('Repo.clone_from("https://github.com/Emin-ahmedoff/AsenaUserBot", "./AsenaUserBot/", branch="master")')
+    basarili(LANG['DOWNLOADED'])
+    onemli(LANG['DEPLOYING'])
+    app = hgit(heroku, repo, appname)
+    config = app.config()
 
     if os.path.isdir("./AsenaUserBot/"):
         rm_r("./AsenaUserBot/")
