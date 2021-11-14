@@ -15,8 +15,8 @@ import base64
 import random
 import os
 
+REPO_URL = "https://github.com/Emin-ahmedoff/AsenaUserBot"
 LANG = LANG['MAIN']
-Client = None
 
 def connect (api):
     heroku_conn = heroku3.from_key(api)
@@ -28,7 +28,7 @@ def connect (api):
     return heroku_conn
 
 def createApp (connect):
-    appname = "owenuserbot" + str(time() * 1000)[-4:].replace(".", "") + str(random.randint(0,500))
+    appname = "neonuserbot" + str(time() * 1000)[-4:].replace(".", "") + str(random.randint(0,500))
     try:
         connect.create_app(name=appname, stack_id_or_name='container', region_id_or_name="eu")
     except requests.exceptions.HTTPError:
@@ -57,33 +57,28 @@ def hgit (connect, repo, appname):
     basarili(LANG['SUCCESS_POSTGRE'])
     return app
 
-async def oturumacvebotlogolustur (stri, aid, ahash):
-    try:
-        Client = TelegramClient(StringSession(stri), aid, ahash)
-        await Client.start()
-        ms = await Client.send_message('me',LANG['OWENUSERBOT'])
-        KanalId = await Client(CreateChannelRequest(
-            title='OwenUserBot BotLog',
-            about=LANG['AUTO_BOTLOG'],
-            megagroup=True
-        ))
+async def botlog (String, Api, Hash):
+    Client = TelegramClient(StringSession(String), Api, Hash)
+    await Client.start()
 
-        KanalId = KanalId.chats[0].id
+    KanalId = await Client(CreateChannelRequest(
+        title='NeonUserBot BotLog',
+        about=LANG['AUTO_BOTLOG'],
+        megagroup=True
+    ))
+    KanalId = KanalId.chats[0].id
 
-        Photo = await Client.upload_file(file='owen.jpg')
-        await Client(EditPhotoRequest(channel=KanalId, 
-            photo=Photo))
-        msg = await Client.send_message(KanalId, LANG['DONT_LEAVE'])
-        await msg.pin()
+    Photo = await Client.upload_file(file='neonimage.jpg')
+    await Client(EditPhotoRequest(channel=KanalId, 
+        photo=Photo))
+    msg = await Client.send_message(KanalId, LANG['DONT_LEAVE'])
+    await msg.pin()
 
-        KanalId = str(KanalId)
-        if "-100" in KanalId:
-            return KanalId
-        else:
-            return "-100" + KanalId
-    except:
-        KanalId = 'err'
+    KanalId = str(KanalId)
+    if "-100" in KanalId:
         return KanalId
+    else:
+        return "-100" + KanalId
 
 if __name__ == "__main__":
     logo(LANGUAGE)
@@ -93,16 +88,27 @@ if __name__ == "__main__":
     heroku = connect(api)
     basarili(LANG['LOGGED'])
 
-    # Telegram #
     onemli(LANG['GETTING_STRING_SESSION'])
     stri, aid, ahash = main()
     basarili(LANG['SUCCESS_STRING'])
-    
     baslangic = time()
 
+    bilgi(LANG['CREATING_APP'])
+    appname = createApp(heroku)
+    basarili(LANG['SUCCESS_APP'])
+    onemli(LANG['DOWNLOADING'])
+    
+    # credi~ Brend Userbot
+    
     if os.path.isdir("./AsenaUserBot/"):
         rm_r("./AsenaUserBot/")
-    repo = Repo.clone_from(userbot,"./AsenaUserBot/", branch="main")
+    repo = Repo.clone_from(REPO_URL,"./AsenaUserBot/", branch="master")
+    basarili(LANG['DOWNLOADED'])
+    onemli(LANG['DEPLOYING'])
+    app = hgit(heroku, repo, appname)
+    config = app.config()
+    
+    basarili(LANG['DOWNLOADED'])
     onemli(LANG['DEPLOYING'])
     app = hgit(heroku, repo, appname)
     config = app.config()
