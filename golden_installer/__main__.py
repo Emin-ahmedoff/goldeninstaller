@@ -66,7 +66,7 @@ async def botlog (String, Api, Hash):
     ))
     KanalId = KanalId.chats[0].id
 
-    Photo = await Client.upload_file(file='golden.png')
+    Photo = await Client.upload_file(file='golden.jpg')
     await Client(EditPhotoRequest(channel=KanalId, 
         photo=Photo))
     msg = await Client.send_message(KanalId, LANG['DONT_LEAVE'])
