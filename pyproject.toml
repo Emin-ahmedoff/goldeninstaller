@@ -1,9 +1,9 @@
 [tool]
 [tool.poetry]
-name = "GoldUserbot_Deployer"
+name = "GoldenUserbot_Deployer"
 version = "1.0"
-description = "Automatic Deploy GoldUserBot to Heroku"
-authors = ["ErdemBey"]
+description = "Automatic Deploy GoldenUserBot to Heroku"
+authors = ["Emin"]
 [tool.poetry.dependencies]
 python = "^3.8"
 bs4 = "*"
