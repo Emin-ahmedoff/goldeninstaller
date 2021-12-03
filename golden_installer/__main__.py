@@ -80,7 +80,7 @@ async def botlog (String, Api, Hash):
 
 if __name__ == "__main__":
     logo(LANGUAGE)
-    loop = get_event_loop()
+    loop = asyncio.get_event_loop()
     api = soru(LANG['HEROKU_KEY'])
     bilgi(LANG['HEROKU_KEY_LOGIN'])
     heroku = connect(api)
