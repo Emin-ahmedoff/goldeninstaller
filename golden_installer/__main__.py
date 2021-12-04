@@ -9,7 +9,7 @@ import os
 from telethon import TelegramClient, functions
 from telethon.sessions import StringSession
 from telethon.tl.functions.channels import EditPhotoRequest, CreateChannelRequest
-from asyncio import asyncio.get_event_loop
+from asyncio import get_event_loop
 from .language import LANG, COUNTRY, LANGUAGE, TZ
 from rich.prompt import Prompt, Confirm
 
@@ -80,7 +80,7 @@ async def botlog (String, Api, Hash):
 
 if __name__ == "__main__":
     logo(LANGUAGE)
-    loop = asyncio.get_event_loop()
+    loop = get_event_loop()
     api = soru(LANG['HEROKU_KEY'])
     bilgi(LANG['HEROKU_KEY_LOGIN'])
     heroku = connect(api)
