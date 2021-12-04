@@ -9,7 +9,7 @@ import os
 from telethon import TelegramClient, functions
 from telethon.sessions import StringSession
 from telethon.tl.functions.channels import EditPhotoRequest, CreateChannelRequest
-from asyncio import get_event_loop
+from asyncio import asyncio.get_event_loop
 from .language import LANG, COUNTRY, LANGUAGE, TZ
 from rich.prompt import Prompt, Confirm
 
